@@ -245,7 +245,7 @@ html {
 }
 
 body {
-  background: #f2f5f3;
+  background: #1f1f1f;
 }
 
 body.is-preload *,
@@ -310,7 +310,7 @@ h2.major {
 }
 
 h2.major span {
-  background: #fff;
+  background: #1f1f1f;
   position: relative;
   display: inline-block;
   top: -0.775em;
@@ -2477,7 +2477,7 @@ table.default thead {
   font-weight: 700;
   text-transform: uppercase;
   padding: 2em 0;
-  background: #fff;
+  background: #1f1f1f;
   margin: 0 auto;
 }
 
@@ -2489,7 +2489,7 @@ table.default thead {
 }
 
 #header .logo div {
-  background: #fff;
+  background: #1f1f1f;
   position: relative;
   display: inline-block;
   padding: 0 1.5em 0 1.5em;
@@ -2716,7 +2716,7 @@ body {
 /* Main */
 
 #main {
-  background: #fff;
+  background: #1f1f1f;
   border-top: solid 5px #b1ddab;
   border-bottom: solid 5px #c1cac5;
   border-top-width: 35px;
@@ -2751,7 +2751,7 @@ body {
 }
 
 #footer h2.major span {
-  background: #f2f5f3;
+  background: #1f1f1f;
 }
 
 /* Copyright */
