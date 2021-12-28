@@ -7,10 +7,10 @@
 //general variables:
 
 var url_wms =
-  "http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms";
+  "https://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms";
 
 var url_wfs =
-  "http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/";
+  "https://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/";
 
 var workspace_name = "gis";
 
@@ -79,7 +79,7 @@ var ecuadorBoundary = new ol.layer.Image({
 // var ecuadorProvinces = new ol.layer.Image({
 //   title:"Ecuador Provinces",
 //   source: new ol.source.ImageWMS({
-//     url: "http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms",
+//     url: "https://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms",
 //     params: {
 //       LAYERS: workspace_name+":"+"ECU_adm1"},
 //     crossOrigin: "Anonymous",

@@ -1,0 +1,25 @@
+{
+  "name": "repo_gis",
+  "version": "1.0.0",
+  "description": "TXT by HTML5 UP\r html5up.net | @ajlkn\r Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)",
+  "main": "map.js",
+  "dependencies": {
+    "express": "^4.17.2",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanfranciscoamieva54/gis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanfranciscoamieva54/gis/issues"
+  },
+  "homepage": "https://github.com/juanfranciscoamieva54/gis#readme"
+}
