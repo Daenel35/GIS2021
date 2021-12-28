@@ -9,7 +9,7 @@
 var url_wms = 'http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms'
 
 var url_wfs =
-  "https://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/";
+  "https://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wfs";
 
 var workspace_name = "gis";
 
@@ -98,18 +98,18 @@ var ecuadorRoads = new ol.layer.Image({
   visible: true,
 });
 
-// var ecuadorRailways = new ol.layer.Image({
-//   title:"Rails",
-//   source: new ol.source.ImageWMS({
-//     url: url_wms,
-//     params: {
-//       LAYERS: workspace_name+":"+"ECU_rails"
-//     },
-//     serverType:'geoserver',
-//     crossOrigin: "Anonymous",
-//   }),
-//   visible: true,
-// });
+ var ecuadorRailways = new ol.layer.Image({
+   title:"Rails",
+   source: new ol.source.ImageWMS({
+     url: url_wms,
+     params: {
+       LAYERS: workspace_name+":"+"ECU_rails"
+     },
+     serverType:'geoserver',
+     crossOrigin: "Anonymous",
+   }),
+   visible: true,
+ });
 
 var ecuadorwater = new ol.layer.Image({
   title: "Water areas",

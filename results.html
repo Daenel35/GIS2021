@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>No Sidebar - TXT by HTML5 UP</title>
+    <title>Results analysis</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -20,8 +20,8 @@
       <header id="header">
         <div class="logo container">
           <div>
-            <h1><a href="index.html" id="logo">TXT</a></h1>
-            <p>A responsive site template by HTML5 UP</p>
+            <h1><a href="index.html" id="logo">AAA</a></h1>
+            <p>- GEOGRAPHIC INFORMATION SYSTEMS</p>
           </div>
         </div>
       </header>
@@ -52,163 +52,166 @@
 
                 <article class="box page-content">
                   <header>
-                    <h2>No Sidebar</h2>
-                    <p>
-                      Semper amet scelerisque metus faucibus morbi congue mattis
-                    </p>
-                    <ul class="meta">
-                      <li class="icon fa-clock">5 days ago</li>
-                      <li class="icon fa-comments"><a href="#">1,024</a></li>
-                    </ul>
+                    <h2 style="text-align:center;">Results Analysis</h2>
                   </header>
 
                   <section>
-                    <span class="image featured"
-                      ><img src="images/pic05.jpg" alt=""
-                    /></span>
                     <p>
-                      Phasellus quam turpis, feugiat sit amet ornare in,
-                      hendrerit in lectus. Praesent semper mod quis eget mi.
-                      Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus
-                      et mattis lectus sit amet pulvinar. Nam turpis nisi
-                      consequat etiam lorem ipsum dolor sit amet nullam.
+                      After the processing steps detailed in
+                      <a href="processing.html">Processing Section</a> we have
+                      implemented a Random Forest model (Supervised learning
+                      algorithm) in order to classify the Landslide and
+                      Non-Landslide zones (LZ and NLZ). Here we will show the
+                      different approaches used and their associated results.
+                      First we will explain an approach with 1000 points and
+                      then another one which used 5000 points.
                     </p>
                   </section>
 
                   <section>
-                    <h3>More intriguing information</h3>
+                    <h2 style="text-align:center;">1000 points approach</h2>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Maecenas ac quam risus, at tempus justo. Sed dictum rutrum
-                      massa eu volutpat. Quisque vitae hendrerit sem.
-                      Pellentesque lorem felis, ultricies a bibendum id,
-                      bibendum sit amet nisl. Mauris et lorem quam. Maecenas
-                      rutrum imperdiet vulputate. Nulla quis nibh ipsum, sed
-                      egestas justo. Morbi ut ante mattis orci convallis tempor.
-                      Etiam a lacus a lacus pharetra porttitor quis accumsan
-                      odio. Sed vel euismod nisi. Etiam convallis rhoncus dui
-                      quis euismod. Maecenas lorem tellus, congue et condimentum
-                      ac, ullamcorper non sapien vulputate. Nulla quis nibh
-                      ipsum, sed egestas justo. Morbi ut ante mattis orci
-                      convallis tempor. Etiam a lacus a lacus pharetra porttitor
-                      quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-                      rhoncus dui quis euismod. Maecenas lorem tellus, congue et
-                      condimentum ac, ullamcorper non sapien. Donec sagittis
-                      massa et leo semper a scelerisque metus faucibus. Morbi
-                      congue mattis mi. Phasellus sed nisl vitae risus tristique
-                      volutpat. Cras rutrum commodo luctus.
+                      In this first trial we have considered a train-test ratio of 70-30% and a total ammount of points of 1000.
+                      We have sampled in the following way our points:
+                      <ul>
+                        <li>LZ - Train: 350 points</li>
+                        <li>NLZ - Train: 350 points</li>
+                        <li>LZ - Test: 150 points</li>
+                        <li>NLZ - Test: 150 points</li>
+                      </ul>
                     </p>
+
+                    <h2 class="major"><span>The Overall Accuracy we have reached was 72%</span></h2>
+                  
+                    <br>  
+                  
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Class</th>
+                          <th>NLZ</th>
+                          <th>LZ</th>
+                          <th>UA</th>
+                          <th>PA</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>NLZ</td>
+                          <td>74</td>
+                          <td>13</td>
+                          <td>85%</td>
+                          <td>52%</td>
+                        </tr>
+                        <tr>
+                          <td>LZ</td>
+                          <td>68</td>
+                          <td>136</td>
+                          <td>67%</td>
+                          <td>91%</td>
+                        </tr>
+                      </tbody>
+                      </table>
+
                   </section>
 
                   <section>
-                    <h3>So in conclusion ...</h3>
+                    <h2 style="text-align:center;">5000 points approach</h2>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Maecenas ac quam risus, at tempus justo. Sed dictum rutrum
-                      massa eu volutpat. Quisque vitae hendrerit sem.
-                      Pellentesque lorem felis, ultricies a bibendum id,
-                      bibendum sit amet nisl. Mauris et lorem quam. Maecenas
-                      rutrum imperdiet vulputate. Nulla quis nibh ipsum, sed
-                      egestas justo. Morbi ut ante mattis orci convallis tempor.
-                      Etiam a lacus a lacus pharetra porttitor quis accumsan
-                      odio. Sed vel euismod nisi. Etiam convallis rhoncus dui
-                      quis euismod. Maecenas lorem tellus, congue et condimentum
-                      ac, ullamcorper non sapien. Donec sagittis massa et leo
-                      semper a scelerisque metus faucibus. Morbi congue mattis
-                      mi. Phasellus sed nisl vitae.
-                    </p>
+                      <ul>
+                        <li>Train-test Split: 70-30% (the same)</li>
+                        <li> Total ammount of points: 5000</li>
+                        <li>Was considered the relative distribution of areas between LZ and NLZ in order to distribute the points</li>
+
+                      </ul>
+
+                      
+                  <!-- OPTION A): TABLE WITH TABLEAU  
+                    
+                    <div class='tableauPlaceholder' id='viz1640719391447' 
+                      style='display: block;
+                      margin-left: auto;
+                      margin-right: auto;'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='tables_gis&#47;tabla' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1640719391447');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='75%';vizElement.style.height=(divElement.offsetWidth*0.25)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>            
+                    </p> -->
+                  
+                  <!-- OPTION B): TABLE WITH HTML-->
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Class of   area</th>
+                        <th>% surface</th>
+                        <th>Assigning by proportion</th>
+                        <th>Train points</th>
+                        <th>Test points</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>LZ</td>
+                        <td>32,40%</td>
+                        <td>1620</td>
+                        <td>1134</td>
+                        <td>486</td>
+                      </tr>
+                      <tr>
+                        <td>NLZ</td>
+                        <td>67,60%</td>
+                        <td>3380</td>
+                        <td>2366</td>
+                        <td>1014</td>
+                      </tr>
+                      <tr>
+                        <td>Total</td>
+                        <td>100%</td>
+                        <td>5000</td>
+                        <td>3500</td>
+                        <td>1500</td>
+                      </tr>
+                    </tbody>
+                    </table>
                     <p>
-                      Suspendisse laoreet metus ut metus imperdiet interdum
-                      aliquam justo tincidunt. Mauris dolor urna, fringilla vel
-                      malesuada ac, dignissim eu mi. Praesent mollis massa ac
-                      nulla pretium pretium. Maecenas tortor mauris, consectetur
-                      pellentesque dapibus eget, tincidunt vitae arcu.
+                      We considered absolutely relevant to try to distribute in an homogeneous way the points to cover in a similar way both classes. Also was important to increment the number of points to cover more areas and in this way have a higher volume of comparisons in order to perform the classification.
+                      
+                      <h2 class="major"><span>Finally we got an accuracy of 80%</span></h2>
+
+                      <br>  
+                  
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Class</th>
+                            <th>NLZ</th>
+                            <th>LZ</th>
+                            <th>UA</th>
+                            <th>PA</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>NLZ</td>
+                            <td>747</td>
+                            <td>93</td>
+                            <td>89%</td>
+                            <td>79%</td>
+                          </tr>
+                          <tr>
+                            <td>LZ</td>
+                            <td>197</td>
+                            <td>388</td>
+                            <td>66%</td>
+                            <td>81%</td>
+                          </tr>
+                        </tbody>
+                        </table>
+
                     </p>
+
+
                   </section>
                 </article>
               </div>
             </div>
-            <div class="col-12">
-              <!-- Features -->
-              <section class="box features">
-                <h2 class="major"><span>A Major Heading</span></h2>
-                <div>
-                  <div class="row">
-                    <div class="col-3 col-6-medium col-12-small">
-                      <!-- Feature -->
-                      <section class="box feature">
-                        <a href="#" class="image featured"
-                          ><img src="images/pic01.jpg" alt=""
-                        /></a>
-                        <h3><a href="#">A Subheading</a></h3>
-                        <p>
-                          Phasellus quam turpis, feugiat sit amet ornare in, a
-                          hendrerit in lectus dolore. Praesent semper mod quis
-                          eget sed etiam eu ante risus.
-                        </p>
-                      </section>
-                    </div>
-                    <div class="col-3 col-6-medium col-12-small">
-                      <!-- Feature -->
-                      <section class="box feature">
-                        <a href="#" class="image featured"
-                          ><img src="images/pic02.jpg" alt=""
-                        /></a>
-                        <h3><a href="#">Another Subheading</a></h3>
-                        <p>
-                          Phasellus quam turpis, feugiat sit amet ornare in, a
-                          hendrerit in lectus dolore. Praesent semper mod quis
-                          eget sed etiam eu ante risus.
-                        </p>
-                      </section>
-                    </div>
-                    <div class="col-3 col-6-medium col-12-small">
-                      <!-- Feature -->
-                      <section class="box feature">
-                        <a href="#" class="image featured"
-                          ><img src="images/pic03.jpg" alt=""
-                        /></a>
-                        <h3><a href="#">And Another</a></h3>
-                        <p>
-                          Phasellus quam turpis, feugiat sit amet ornare in, a
-                          hendrerit in lectus dolore. Praesent semper mod quis
-                          eget sed etiam eu ante risus.
-                        </p>
-                      </section>
-                    </div>
-                    <div class="col-3 col-6-medium col-12-small">
-                      <!-- Feature -->
-                      <section class="box feature">
-                        <a href="#" class="image featured"
-                          ><img src="images/pic04.jpg" alt=""
-                        /></a>
-                        <h3><a href="#">And One More</a></h3>
-                        <p>
-                          Phasellus quam turpis, feugiat sit amet ornare in, a
-                          hendrerit in lectus dolore. Praesent semper mod quis
-                          eget sed etiam eu ante risus.
-                        </p>
-                      </section>
-                    </div>
-                    <div class="col-12">
-                      <ul class="actions">
-                        <li>
-                          <a href="#" class="button large">Do Something</a>
-                        </li>
-                        <li>
-                          <a href="#" class="button alt large"
-                            >Think About It</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
+            
 
       <!-- Footer -->
       <footer id="footer">
