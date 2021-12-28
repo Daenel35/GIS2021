@@ -52,9 +52,9 @@
 
                 <article class="box page-content">
                   <header>
-                    <h2>No Sidebar</h2>
+                    <h2>Exposure Analysis</h2>
                     <p>
-                      Semper amet scelerisque metus faucibus morbi congue mattis
+                      how much exposed is Tirano's population to landslides?
                     </p>
                     <ul class="meta">
                       <li class="icon fa-clock">5 days ago</li>
@@ -67,37 +67,112 @@
                       ><img src="images/pic05.jpg" alt=""
                     /></span>
                     <p>
-                      Phasellus quam turpis, feugiat sit amet ornare in,
-                      hendrerit in lectus. Praesent semper mod quis eget mi.
-                      Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus
-                      et mattis lectus sit amet pulvinar. Nam turpis nisi
-                      consequat etiam lorem ipsum dolor sit amet nullam.
+                      This map contains 2 different layers for each of the two different supsceptibility maps:
+                      1)Population raster - shows Tirano's population distribution; 
+                      2)Reclassified supsceptibility map - shows the level of landslide risk (ranging from [0, 0.25) = low; [0.25, 0.5) = moderate; [0.5, 0.75) = high; [0.75, 1] = very high).
                     </p>
                   </section>
 
                   <section>
-                    <h3>More intriguing information</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Maecenas ac quam risus, at tempus justo. Sed dictum rutrum
-                      massa eu volutpat. Quisque vitae hendrerit sem.
-                      Pellentesque lorem felis, ultricies a bibendum id,
-                      bibendum sit amet nisl. Mauris et lorem quam. Maecenas
-                      rutrum imperdiet vulputate. Nulla quis nibh ipsum, sed
-                      egestas justo. Morbi ut ante mattis orci convallis tempor.
-                      Etiam a lacus a lacus pharetra porttitor quis accumsan
-                      odio. Sed vel euismod nisi. Etiam convallis rhoncus dui
-                      quis euismod. Maecenas lorem tellus, congue et condimentum
-                      ac, ullamcorper non sapien vulputate. Nulla quis nibh
-                      ipsum, sed egestas justo. Morbi ut ante mattis orci
-                      convallis tempor. Etiam a lacus a lacus pharetra porttitor
-                      quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-                      rhoncus dui quis euismod. Maecenas lorem tellus, congue et
-                      condimentum ac, ullamcorper non sapien. Donec sagittis
-                      massa et leo semper a scelerisque metus faucibus. Morbi
-                      congue mattis mi. Phasellus sed nisl vitae risus tristique
-                      volutpat. Cras rutrum commodo luctus.
-                    </p>
+                   <h3>Map 1</h3>
+                   <div class="table-wrapper">
+                     <table class="alt">
+                     <thead><tr><th title="Field #1">zone</th>
+                     <th title="Field #2">m2</th>
+                     <th title="Field #3">sum</th>
+                     <th title="Field #4">count</th>
+                     <th title="Field #5">min</th>
+                     <th title="Field #6">max</th>
+                     <th title="Field #7">mean</th>
+                     </tr></thead>
+                     <tbody><tr>
+                     <td>high</td>
+                     <td>25298385.46217264</td>
+                     <td align="right">24.04489513</td>
+                     <td align="right">3793</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">5.41723728</td>
+                     <td align="right">0.00633928</td>
+                     </tr>
+                     <tr>
+                     <td>critical</td>
+                     <td>49676344.56162980</td>
+                     <td align="right">56.86418436</td>
+                     <td align="right">7448</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">28.44941521</td>
+                     <td align="right">0.00763483</td>
+                     </tr>
+                     <tr>
+                     <td>medium</td>
+                     <td>25078283.50587111</td>
+                     <td align="right">1795.15286594</td>
+                     <td align="right">3760</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">50.54730988</td>
+                     <td align="right">0.47743427</td>
+                     </tr>
+                     <tr>
+                     <td>low</td>
+                     <td>29773791.90697038</td>
+                     <td align="right">11866.22113653</td>
+                     <td align="right">4464</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">72.73077393</td>
+                     <td align="right">2.65820366</td>
+                     </tr>
+                     </tbody></table>
+                    </div>
+                    </section>
+
+                    <section>
+                     <h3>Map 2</h3>
+                     <table>
+                     <thead><tr><th title="Field #1">zone</th>
+                     <th title="Field #2">m2</th>
+                     <th title="Field #3">sum</th>
+                     <th title="Field #4">count</th>
+                     <th title="Field #5">min</th>
+                     <th title="Field #6">max</th>
+                     <th title="Field #7">mean</th>
+                     </tr></thead>
+                     <tbody><tr>
+                     <td>high</td>
+                     <td>25298385.46217264</td>
+                     <td align="right">24.04489513</td>
+                     <td align="right">3793</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">5.41723728</td>
+                     <td align="right">0.00633928</td>
+                     </tr>
+                     <tr>
+                     <td>critical</td>
+                     <td>49676344.56162980</td>
+                     <td align="right">56.86418436</td>
+                     <td align="right">7448</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">28.44941521</td>
+                     <td align="right">0.00763483</td>
+                     </tr>
+                     <tr>
+                     <td>medium</td>
+                     <td>25078283.50587111</td>
+                     <td align="right">1795.15286594</td>
+                     <td align="right">3760</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">50.54730988</td>
+                     <td align="right">0.47743427</td>
+                     </tr>
+                     <tr>
+                     <td>low</td>
+                     <td>29773791.90697038</td>
+                     <td align="right">11866.22113653</td>
+                     <td align="right">4464</td>
+                     <td align="right">0.00000000</td>
+                     <td align="right">72.73077393</td>
+                     <td align="right">2.65820366</td>
+                     </tr>
+                     </tbody></table>
                   </section>
 
                   <section>
