@@ -6,8 +6,7 @@
 
 //general variables:
 
-var url_wms =
-  "https://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms";
+var url_wms = 'http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms'
 
 var url_wfs =
   "https://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/";
@@ -18,7 +17,7 @@ var workspace_name = "gis";
 var osm = new ol.layer.Tile({
   title: "Open Street map",
   type: "base",
-  visible: true,
+  visible: false,
   source: new ol.source.OSM(),
 });
 
@@ -45,7 +44,7 @@ var bingAerial = new ol.layer.Tile({
 var bingAerialWithLabels = new ol.layer.Tile({
   title: "Bing Maps—Aerial with Labels",
   type: "base",
-  visible: false,
+  visible: true,
   source: new ol.source.BingMaps({
     key: "AvUPT-mlamS50HlSYOaL5Mz8iZvqbzGrUs1-qRLevsCd8ZjyoRAPcQf1Ab5E2w1u",
     imagerySet: "AerialWithLabels",
@@ -71,7 +70,7 @@ var ecuadorBoundary = new ol.layer.Image({
   title: "Ecuador Boundary",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { LAYERS: workspace_name + ":" + "ECU_adm0" },
+    params: { 'LAYERS': workspace_name + ":" + "ECU_adm0" },
     crossOrigin: "Anonymous",
   }),
 });
@@ -92,7 +91,7 @@ var ecuadorRoads = new ol.layer.Image({
   source: new ol.source.ImageWMS({
     url: url_wms,
     params: {
-      LAYERS: workspace_name + ":" + "ECU_roads",
+      'LAYERS': workspace_name + ":" + "ECU_roads",
     },
     crossOrigin: "Anonymous",
   }),
@@ -116,7 +115,7 @@ var ecuadorwater = new ol.layer.Image({
   title: "Water areas",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { LAYERS: workspace_name + ":" + "ECU_water_areas" },
+    params: { 'LAYERS': workspace_name + ":" + "ECU_water_areas" },
     crossOrigin: "Anonymous",
   }),
   visible: true,
@@ -126,7 +125,7 @@ var ecuadorwaterlines = new ol.layer.Image({
   title: "Water lines",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { LAYERS: workspace_name + ":" + "ECU_water_lines" },
+    params: { 'LAYERS': workspace_name + ":" + "ECU_water_lines" },
     crossOrigin: "Anonymous",
   }),
   visible: true,
@@ -172,7 +171,7 @@ var ecuadorSrtm = new ol.layer.Image({
   title: "Ecuador DEM (SRTM)",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { LAYERS: workspace_name + ":DEM_Ecuador" },
+    params: { 'LAYERS': workspace_name + ":DEM_Ecuador" },
     crossOrigin: "Anonymous",
   }),
 });
@@ -190,7 +189,7 @@ var remoteWms = new ol.layer.Image({
   title: "Remote WMS",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { LAYERS: workspace_name + ":FloodHazard100y" },
+    params: { 'LAYERS': workspace_name + ":FloodHazard100y" },
     crossOrigin: "Anonymous",
   }),
 });
@@ -293,5 +292,4 @@ map.on("pointermove", function (event) {
 });
 
 // GET LEGEND:
-document.getElementById("get-legend").innerHTML =
-  "<img src=" + ecuadorSrtm.A.source.getLegendUrl() + "></img>";
+document.getElementById('get-legend').innerHTML = '<img src='+ecuadorSrtm.A.source.getLegendUrl()+'></img >' ;
