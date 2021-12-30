@@ -101,7 +101,7 @@ video {
 /*---------------------------------------------------*/
 
 body {
-  background: #1f1f1f !important;
+  background: #3838387e !important;
   color: rgba(184, 180, 219, 0.753) !important;
 }
 
@@ -116,7 +116,7 @@ li {
 }
 
 #main {
-  background: #1f1f1f !important;
+  background: #1f1e1eea !important;
   border-top: solid 35px #abb8dd !important;
   border-bottom: solid 5px #abb8dd !important;
 }
@@ -130,11 +130,20 @@ li {
 }
 
 h2.major span {
-  background: #1f1f1f !important;
+  background: #abb8dd !important;
+  color: #1f1e1eea;
+  font-size: 80%;
 }
 
+#footer h2.major-v2 span {
+  color: #abb8dd !important;
+  font-size: 150%;
+}
+
+
 #footer h2.major span {
-  background: #1f1f1f !important;
+  background: #abb8dd !important;
+  color: #1f1e1eea;
 }
 
 #map {
