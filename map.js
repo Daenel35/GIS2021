@@ -292,4 +292,4 @@ map.on("pointermove", function (event) {
 });
 
 // GET LEGEND:
-document.getElementById('get-legend').innerHTML = '<img src='+ecuadorSrtm.A.source.getLegendUrl()+'></img >' ;
+// document.getElementById('get-legend').innerHTML = '<img src='+ecuadorSrtm.A.source.getLegendUrl()+'></img >' ;
