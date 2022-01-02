@@ -66,20 +66,11 @@ var stamenToner = new ol.layer.Tile({
 
 //LAYERS:
 
-var susc_1K = new ol.layer.Image({
-  title: "Susceptibility map 1K",
+var comparison_susc = new ol.layer.Image({
+  title: "Comparison of results 5K - 1K",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { LAYERS: workspace_name + ':susc_map_1K' },
-  }),
-  crossOrigin: "Anonymous",
-});
-
-var susc_5K = new ol.layer.Image({
-  title: "Susceptibility map 5K",
-  source: new ol.source.ImageWMS({
-    url: url_wms,
-    params: { LAYERS: workspace_name + ':susc_map_5K' },
+    params: { LAYERS: workspace_name + ':comparison_susc' },
   }),
   crossOrigin: "Anonymous",
 });
@@ -101,7 +92,7 @@ var map = new ol.Map({
     }),
     new ol.layer.Group({
       title: "Overlay Layers",
-      layers: [susc_1K,susc_5K],
+      layers: [comparison_susc],
     }),
   ],
 
