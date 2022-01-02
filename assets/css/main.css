@@ -100,6 +100,7 @@ video {
 /*----------------ADDED STUFF------------------------*/
 /*---------------------------------------------------*/
 
+
 /* body {
   background: #3838387e !important;
   color: rgba(184, 180, 219, 0.753) !important;
@@ -428,7 +429,7 @@ table {
 
 section,
 article {
-  margin-bottom: 6em;
+  margin-bottom: 20px;
 }
 
 section > :last-child,

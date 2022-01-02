@@ -80,7 +80,7 @@
             Implementation of a model for landslide's susceptibility mapping and
             exposure assessment for the Tirano region in Lombardy
           </p>
-          <a href="#main" class="button scrolly">LEARN ABOUT IT!</a>
+          <a href="#map" class="button scrolly">INTERACT WITH THE RESULTS!</a>
         </div>
       </section>
 
@@ -117,104 +117,94 @@
                   ante risus. Aliquam erat volutpat. Aliquam luctus et mattis
                   lectus amet pulvinar. Nam nec turpis consequat.
                 </p>
-				<div id="map">
-					<div id="popup"></div>
-				</div>
-				<script src="map_index.js"></script>
+
+              <div id="map"></div>
+              <script src="map_index.js"></script>
               </section>
             </div>
-			
-		  
+            
+            <article class="box page-content" style="margin-bottom:100px">
 
+            <section>
+              <h2 style="text-align:center;margin-top: 10px;"><a href="processing.html">Brief about the processing implemented</a></h2>
 
-            <div class="col-12">
-              <!-- Blog -->
-              <section class="box blog">
-                <h2 class="major"><span>Learn more about the processing and our team</span></h2>
-                <div>
-                  <div class="row">
-                    <div class="col-9 col-12-medium">
-                      <div class="content">
-                        <!-- Featured Post -->
-                        <article class="box post">
-                          <header>
-                            <h3><a href="processing.html">Brief about the processing implemented</a></h3>
-                            <p>
-                              With a smaller subtitle that attempts to elaborate
-                            </p>
-                            <ul class="meta"></ul>
-                          </header>
-                          <a href="processing.html" class="image featured"
-                            ><img src="images/tirano.jpg" alt=""
-                          /></a>
-                          <p>
-                            Phasellus quam turpis, feugiat sit amet ornare in, a
-                            hendrerit in lectus. Praesent semper mod quis eget
-                            mi. Etiam sed ante risus aliquam erat et volutpat.
-                            Praesent a dapibus velit. Curabitur sed nisi nunc,
-                            accumsan vestibulum lectus. Lorem ipsum dolor sit
-                            non aliquet sed, tempor et dolor. Praesent a dapibus
-                            velit. Curabitur accumsan.
-                          </p>
-                          <a href="processing.html" class="button">Know more</a>
-                        </article>
-						<article class="box post">
-							<header>
-							  <h3><a href="about_us.html">Brief about us</a></h3>
-							  <p>
-								With a smaller subtitle that attempts to elaborate
-							  </p>
-							  <ul class="meta"></ul>
-							</header>
-							<a href="about_us.html" class="image featured"
-							  ><img src="images/team.jpg" alt=""
-							/></a>
-							<p>
-							  Phasellus quam turpis, feugiat sit amet ornare in, a
-							  hendrerit in lectus. Praesent semper mod quis eget
-							  mi. Etiam sed ante risus aliquam erat et volutpat.
-							  Praesent a dapibus velit. Curabitur sed nisi nunc,
-							  accumsan vestibulum lectus. Lorem ipsum dolor sit
-							  non aliquet sed, tempor et dolor. Praesent a dapibus
-							  velit. Curabitur accumsan.
-							</p>
-							<a href="about_us.html" class="button">Know more</a>
-						  </article>
-                      </div>
-                    </div>
-                    </div>
+              
+
+              <p  style="display: block;margin-left: auto;margin-right: auto; margin-top:20px;">
+                 
+                In order to predict the landslide's susceptibility zones of the assigned region was necessary to carry out a set of steps to process a certain group of inputs. 
+                
+                Those steps have covered mainly the following aspects:
+                
+                <ul>
+                  <li>implementation of basic fixing operations on the input layers like resampling and reclassification of their data</li>
+                  <li>transformation from vector data model to raster one</li>
+                  <li>extraction of information by implementing a sampling technique over the different input layers</li>
+                </ul>
+                
+                This preprocessing stage was the foundation for the implementation of the random forest model.
+
+              </p>
+
+              <img src="images/process.png" style="max-width:300px;max-height:200px;display: block;margin-left: auto;
+              margin-right: auto;" alt="process"/>
+
+              </br>
+
+              <a href="processing.html" class="button" style="max-width:300px;display: block;margin-left: auto;
+              margin-right: auto;">Know more</a>        
+                    
+              </br>
+
+                <h2 style="text-align:center; margin-top: 10px;"><a href="about_us.html">This is our team</a></h2>
+  
+                
+            
+                <p>The team of AAA-Geographic Information Systems is characterized for a strong passion to work on topics related with public issues of its community. Also is a key value of this group the teamwork and the collaboration to get together high level results.
+                </p>
+                <img src="images/team.png" style="max-width:400px;max-height:200px;display: block;margin-left: auto;
+                margin-right: auto;" alt="team"
+            />
+              </br>
+              <a href="about_us.html" class="button" style="max-width:300px;display: block;margin-left: auto;
+              margin-right: auto;">Know more</a>        
+              </section>
+              </article>
+
+            </br>
+
+            <!-- Footer -->
+            <footer id="footer" >
+              <div class="container" >
+                <div class="row gtr-200" >
+                  </div>
+                  <div class="col-12" >
+                    <!-- Contact -->
+                    <section>
+                      <h2 class="major"><span>Explore more about our work</span></h2>
+                      <ul class="contact">
+                        
+                        <li>
+                          <a
+                            class="icon brands fa-github"
+                            href="https://github.com/Daenel35/GIS2021"
+                            ><span class="label">Git Hub</span></a
+                          >
+                        </li>
+                      </ul>
+                    </section>
                   </div>
                 </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
 
-           <!-- Footer -->
-           <footer id="footer">
-            <div class="container">
-              <div class="row gtr-200">
-                
-                <div class="col-12">
-                  <!-- Contact -->
-                  <section>
-                    <h2 class="major"><span>Explore more about our work</span></h2>
-                    <ul class="contact">
-                      
-                      <li>
-                        <a
-                          class="icon brands fa-github"
-                          href="https://github.com/Daenel35/GIS2021"
-                          ><span class="label">Git Hub</span></a
-                        >
-                      </li>
-    
-                      
-                    </ul>
-                  </section>
+                <!-- Copyright -->
+                <div id="copyright">
+                  <ul class="menu">
+                    <li>Group 1- Politecnico di Milano - GIS course 2021: Aguirre Nieto, Daniel Alberto - Amieva, Juan Francisco - Austoni, Alessandro</a></li>
+                  </ul>
                 </div>
               </div>
+            </footer>
+
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>

@@ -8,9 +8,9 @@
 
 //var url_wms = 'http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms'
 
-var url_wms = 'http://localhost:8080/geoserver/wms';
+var url_wms = 'http://localhost:8080/geoserver/gis/wms';
 
-var workspace_name = "gis";
+var workspace_name = 'gis';
 
 //BASE MAPS:
 var osm = new ol.layer.Tile({
