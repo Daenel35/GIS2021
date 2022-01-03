@@ -1,6 +1,7 @@
-var url_wms = 'http://localhost:8080/geoserver/Austoni/wms'
+var url_wms = 'http://localhost:8080/geoserver/aaa/wms'
 var url_wfs = 'http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/ows?service=WFS&'
-var workspace = 'Austoni' //thisw is the name of your personal workspace, like geoserver_Austoni
+var workspace = 'aaa' //thisw is the name of your personal workspace, like geoserver_Austoni
+var workspace_A = 'Austoni'
 var bing_key= "AvUPT-mlamS50HlSYOaL5Mz8iZvqbzGrUs1-qRLevsCd8ZjyoRAPcQf1Ab5E2w1u"
 
 //BASE MAPS
@@ -56,15 +57,32 @@ var stamenToner = new ol.layer.Tile({
 
 //OVERLAY LAYERS
 
-var sup4levels = new ol.layer.Image({
-	title:'Reclassified susceptibility map',
+var reclassified1k = new ol.layer.Image({
+	title:'Reclassified susceptibility map 1K points',
 	source: new ol.source.ImageWMS({
 	url: url_wms, 
-	params: {'LAYERS': workspace +':sup_map_4levels_obsolete'}
-}), 
+	params: {'LAYERS': workspace +":suscept_map_1K_reclassified_resampled"},
 	crossOrigin: 'anonymous'
+	}), 
 });
 
+var reclassified5k = new ol.layer.Image({
+	title:'Reclassified susceptibility map 5K points',
+	source: new ol.source.ImageWMS({
+	url: url_wms, 
+	params: {'LAYERS': workspace +':suscept_map_5K_reclassified_resampled'},
+	crossOrigin: 'anonymous'
+	}), 
+});
+
+var population = new ol.layer.Image({
+	title:'Population map',
+	source: new ol.source.ImageWMS({
+	url: url_wms, 
+	params: {'LAYERS': workspace +':pop_reproj_basin'},
+	crossOrigin: 'anonymous'
+	}), 
+});
 
 
 var geojsonFormat = new ol.format.GeoJSON(); 
@@ -83,7 +101,7 @@ var map = new ol.Map({
 		}),
 		new ol.layer.Group({
 			title: 'Overlay Layers',
-			layers: [sup4levels] 
+			layers: [population,reclassified1k,reclassified5k] 
 		}),
 	],
 
