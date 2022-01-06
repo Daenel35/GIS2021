@@ -156,4 +156,5 @@ map.on('pointermove', function(event) {
 	map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
-//document.getElementById('get-legend').innerHTML = '<img src='+sup4levels.A.source.getLegendUrl()+'></img >' ;
+document.getElementById('get-susc-legend').innerHTML = '<img src='+reclassified1k.A.source.getLegendUrl()+'></img >' ;
+document.getElementById('get-pop-legend').innerHTML = '<img src='+population.A.source.getLegendUrl()+'></img >' ;

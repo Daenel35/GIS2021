@@ -5,11 +5,13 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
   TO DO LIST:
-  -change color of the pie plots to match maps
+  -change color of the pie plots to match maps    V
   -change pop map
   -put text conclusions 
   -create fb group page and put reference in each footer
-  -add a legend to the susceptibility reclassified
+  -add a legend to the susceptibility reclassified        V
+  -add a graph near conclusions to show the increasing of low risk population
+  -add popup to show the risk level and the number of people living there
 -->
 <html>
     <head>
@@ -48,9 +50,13 @@
         content="width=device-width, initial-scale=1, user-scalable=no"
       />
       <link rel="stylesheet" href="assets/css/main.css" />
+
+      <!-- my libraries -->
+      <script type="text/javascript" src="myfunctions.js"></script>
     </head>
   <body class="is-preload">
     <div id="page-wrapper">
+
       <!-- Header -->
       <header id="header">
         <div class="logo container">
@@ -99,76 +105,85 @@
                   </header>
 
                   <section>
+                    <div id="ShowLegend" style="width: 100%; display: none;">
+                      <div style="display: table-row">
+                        <h3 style="width: 600px; display: table-cell;">Reclassified Susceptibility Map<br><br>
+                          <div id="get-susc-legend" ></div></h3>
+                        <h3 style="display: table-cell;">Population Raster<br><br>
+                          <div id="get-pop-legend" ></div></h3>
+                      </div>
+                    </div>
+                    <input id="LegendButton" style="display: block;" type="button" value="Show Legend" onclick="showDiv()"/>
+                    <p></p>
                     <div id="map">
                       <div id="popup"></div>
+                      <script src="exp_map.js"></script>
                     </div>
-                    <script src="exp_map.js"></script>
                       This map contains 2 different layers for each of the two different supsceptibility maps:<br>
                       1)Population raster - shows Tirano's population distribution;<br> 
                       2)Reclassified supsceptibility map - shows the level of landslide risk (ranging from [0, 0.25) = low; [0.25, 0.5) = moderate; [0.5, 0.75) = high; [0.75, 1] = very high).
-                    </p>
                   </section>
 
                   <section>
-                   <h3>1k points map</h3>
-                    <img src="images/pop_plot_1k.png" alt=""
+                   <h3><br>1k points map</h3>
+                    <img src="images/pop_plot_1k.png" alt="1k piechart"
                         />
                      <table>
                      <thead><tr><th title="Field #1">risk level</th>
                      <th title="Field #2">m²</th>
-                     <th title="Field #4">people n°</th>
+                     <th title="Field #3">people n°</th>
                      </tr></thead>
                      <tbody><tr>
                      <td>low</td>
-                     <td>23310798.299</td>
-                     <td align="left">3495</td>
+                     <td>23310798,299</td>
+                     <td>12451</td>
                      </tr>
                      <tr>
                      <td>medium</td>
-                     <td>16387591.250</td>
-                     <td align="left">2457</td>
+                     <td>16387591,250</td>
+                     <td>937</td>
                      </tr>
                      <tr>
                      <td>high</td>
-                     <td>28179720.404</td>
-                     <td align="left">4225</td>
+                     <td>28179720,404</td>
+                     <td>227</td>
                      </tr>
                      <tr>
                      <td>very high</td>
-                     <td>61928687.325</td>
-                     <td align="left">9285</td>
+                     <td>61928687,325</td>
+                     <td>128</td>
                      </tr>
                      </tbody></table>
                     </section>
 
                     <section>
-                     <h3>5k points map</h3>
-                       <img src="images/pop_plot_5k.png" alt=""
+                     <h3><br>5k points map</h3>
+                       <img src="images/pop_plot_5k.png" alt="5k piechart"
                         />
                      <table>
                      <thead><tr><th title="Field #1">risk level</th>
                      <th title="Field #2">m²</th>
-                     <th title="Field #4">people n°</th>
+                     <th title="Field #3">people n°</th>
                      </tr></thead>
                      <tbody><tr>
                      <td>low</td>
-                     <td>42319603.778</td>
-                     <td align="left">6345</td>
+                     <td>42319603,778</td>
+                     <td>13353</td>
                      </tr>
                      <tr>
                      <td>medium</td>
-                     <td>15733955.132</td>
-                     <td align="left">2359</td>
+                     <td>15733955,132</td>
+                     <td>296</td>
                      </tr>
                      <tr>
                      <td>high</td>
-                     <td>24484675.409</td>
-                     <td align="left">3671</td>
+                     <td>24484675,409</td>
+                     <td>68</td>
                      </tr>
                      <tr>
                      <td>very high</td>
-                     <td>47268562.959</td>
-                     <td align="left">7087</td>
+                     <td>47268562,959</td>
+                     <td>25</td>
                      </tr>
                      </tbody></table>
                   </section>
