@@ -101,7 +101,7 @@ var map = new ol.Map({
 
   view: new ol.View({
     center: ol.proj.fromLonLat([10.173274, 46.214324]),
-    zoom: 11,
+    zoom: 11.6,
   }),
 
   controls: ol.control.defaults().extend([
