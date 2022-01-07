@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>Results analysis</title>
+    <title>Result Analysis</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -20,7 +20,7 @@
       <header id="header">
         <div class="logo container">
           <div>
-            <p>Geographic Information Systems<br><br></p>
+            <p>AAA - Geographic Information Systems<br><br></p>
             <a href="index.html">
              <img src="images/AAAlogow.png" alt="logo" style="width:200px;height:200px;">
             </a>
@@ -54,27 +54,23 @@
 
                 <article class="box page-content">
                   <header>
-                    <h2 style="text-align:center;">Results Analysis</h2>
+                    <h2 style="text-align:center;">Results and Performance Analysis</h2>
                   </header>
 
                   <section>
-                    <p>
-                      After the processing steps detailed in
-                      <a href="processing.html">Processing Section</a> we have
-                      implemented a Random Forest model (Supervised learning
-                      algorithm) in order to classify the Landslide and
-                      Non-Landslide zones (LZ and NLZ). Here we will show the
-                      different approaches used and their associated results.
-                      First we will explain an approach with 1000 points and
-                      then another one which used 5000 points.
+                    <p align="justify">
+                      All models are a reasonable simplification of the reality, which often represent rather complex convergence of natural phenomena. To model landslide susceptibility several assumptions and simplifications are taken regarding the environmental factors like slope, land curvature, plan, and aspect (orientation of slope), vegetation, land cover and use, lithology, geological faults, water bodies, landslides inventories, among others. Further assumptions regarding the processing of data and algorithms applied are also commonly made to reach an output. To assess the quality of the results validation techniques are applied, usually involving dividing the input dataset into two groups, one for training the model and the other for validating the output obtained. Performance in this case is evaluated through Overall Accuracy, depicting the percentage of the testing dataset correctly predicted as either a landslide-susceptible or not a landslide-susceptible area. Model performance is judged positive above 50% Overall Accuracy, which would be the random choice result for two equally likely outputs (e.g. the toss of a coin).
+                    </p>
+                    <p align="justify">
+                      After the <a href="processing.html">Processing</a> steps a Random Forest model (Supervised learning algorithm) was implemented in order to classify the Landslide and Non-Landslide zones (LZ and NLZ). In this section the different approaches used and their associated results will be shown, starting from the 1K - 1000 points approach explanation to continue with the 5K - 5000 points approach.
                     </p>
                   </section>
 
                   <section>
-                    <h2 style="text-align:center;">1000 points approach</h2>
-                    <p>
-                      In this first trial we have considered a train-test ratio of 70-30% and a total ammount of points of 1000.
-                      We have sampled in the following way our points:
+                    <h2 style="text-align:center;">1K - 1000 points approach</h2>
+                    <p align="justify">
+                      In this first trial, a total ammount of one thousand points and a train-test ratio of 70-30% was considered, for 700 total points for training the model and 300 points for testing it.
+                      The points were sampled in the following way:
                       <ul>
                         <li>LZ - Train: 350 points</li>
                         <li>NLZ - Train: 350 points</li>
@@ -83,7 +79,7 @@
                       </ul>
                     </p>
 
-                    <h2 class="major"><span>The Overall Accuracy we have reached was 72%</span></h2>
+                    <h2 class="major"><span>The Overall Accuracy reached was 72%</span></h2>
                   
                     <br>  
                   
@@ -121,20 +117,19 @@
                   </section>
 
                   <section>
-                    <h2 style="text-align:center;">5000 points approach</h2>
-                    <p>
+                    <h2 style="text-align:center;">5K - 5000 points approach</h2>
+                    <p align="justify">
+                      After different trials, an adequate performance was reached with a five thousand point resolution and a relative distribution in between the LZ and NLZ areas.
                       <ul>
-                        <li>Train-test Split: 70-30% (the same)</li>
-                        <li> Total ammount of points: 5000</li>
-                        <li>Was considered the relative distribution of areas between LZ and NLZ in order to distribute the points</li>
-
+                        <li>Train-test Split: 70-30% (same as 1K)</li>
+                        <li>Total ammount of points: 5000</li>
+                        <li>The relative distribution of areas between LZ and NLZ (~32-68%) was considered in order to distribute the points</li>
                       </ul>
-
                       
                   <table>
                     <thead>
                       <tr>
-                        <th>Class of   area</th>
+                        <th>Class of Area</th>
                         <th>% surface</th>
                         <th>Assigning by proportion</th>
                         <th>Train points</th>
@@ -165,10 +160,10 @@
                       </tr>
                     </tbody>
                     </table>
-                    <p>
-                      We considered absolutely relevant to try to distribute in an homogeneous way the points to cover in a similar way both classes. Also was important to increment the number of points to cover more areas and in this way have a higher volume of comparisons in order to perform the classification.
+                    <p align="justify">
+                      It was considered absolutely relevant to try to distribute in an homogeneous way the points to cover in a similar way both classes (LZ/NLZ). I was also important to increment the number of points to cover more areas and in this way have a higher volume of comparisons in order to perform the classification.
                     </p>                      
-                      <h2 class="major"><span>Finally we got an accuracy of 80%</span></h2>
+                      <h2 class="major"><span>Final overall accuracy of 80%</span></h2>
 
                       <br>  
                   
@@ -204,18 +199,11 @@
 
                         <img style= "max-width: 60%;display:block;margin:auto;" src="images/susc_map_5K.png" alt="Susceptibility map 1000-points"/>
 
-                    
-
-
                   </section>
 
                   <section>
-                    <h2 style="text-align:center;">Comparison of susceptibility
-                    levels between both approaches</h2>
-                    <p>We also made a comparison to understand which was the variation between the susceptibility levels determined between each approach.
-                      For this reason was necessary to compute the difference: Susc. level 5000 output - Susc. level 1000 output
-
-                      The result of this analysis may be observed in the following map:
+                    <h2 style="text-align:center;">Susceptibility comparison between approaches</h2>
+                    <p align="justify">A comparison to understand which was the variation between the susceptibility levels determined between each approach was carried out. For this reason, it was necessary to compute the difference: Susc. level 5K output - Susc. level 1K output. The result of this analysis may be observed in the following map:
                     </p>
                   </br>
 
@@ -235,9 +223,9 @@
             <div class="col-12">
               <!-- About -->
                 <h2 class="major-v2"><span>Final consideration</span></h2>
-                <p>
-                  This project has shown interesting results in the implementation of a Machine Learning Approach by using satellite images in order to determine the Landslide and Non-Landslide zones of Tirano Region.
-                  The use of a GIS approach to determine the proposed objective was important considering that it would help policy makers to get information by an indirect method which has huge advantages in terms of costs and velocity of the processing. 
+                <p align="justify">
+                  This project has shown interesting results in the implementation of a Machine Learning Approach by using satellite images derived geospatial data in order to determine the Landslide and Non-Landslide zones of the Tirano Region.
+                  The use of a GIS approach to determine the proposed objective was important considering that it would help policy makers to get information by an indirect method which has huge advantages in terms of costs and velocity of the processing.
                 </p>
             </div>
             <div class="col-12">
