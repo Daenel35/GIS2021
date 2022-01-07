@@ -59,7 +59,7 @@
 
                   <section>
                     <p align="justify">
-                      All models are a reasonable simplification of the reality, which often represent rather complex convergence of natural phenomena. To model landslide susceptibility several assumptions and simplifications are taken regarding the environmental factors like slope, land curvature, plan, and aspect (orientation of slope), vegetation, land cover and use, lithology, geological faults, water bodies, landslides inventories, among others. Further assumptions regarding the processing of data and algorithms applied are also commonly made to reach an output. To assess the quality of the results validation techniques are applied, usually involving dividing the input dataset into two groups, one for training the model and the other for validating the output obtained. Performance in this case is evaluated through Overall Accuracy, depicting the percentage of the testing dataset correctly predicted as either a landslide-susceptible or not a landslide-susceptible area. Model performance is judged positive above 50% Overall Accuracy, which would be the random choice result for two equally likely outputs (e.g. the toss of a coin).
+                      All models are a reasonable simplification of the reality, which often represent rather complex convergence of natural phenomena. To model landslide susceptibility several assumptions and simplifications are taken regarding the environmental factors like slope, land curvature, plan, and aspect (orientation of slope), vegetation, land cover and use, lithology, geological faults, water bodies, landslides inventories, among others. Further assumptions regarding the processing of data and algorithms applied are also commonly made to reach an output. To assess the quality of the results validation techniques are applied, usually involving dividing the input dataset into two groups, one for training the model and the other for validating the output obtained. Performance in this case is evaluated through Overall Accuracy, depicting the percentage of the testing dataset correctly predicted as either a landslide-susceptible or not a landslide-susceptible area.
                     </p>
                     <p align="justify">
                       After the <a href="processing.html">Processing</a> steps a Random Forest model (Supervised learning algorithm) was implemented in order to classify the Landslide and Non-Landslide zones (LZ and NLZ). In this section the different approaches used and their associated results will be shown, starting from the 1K - 1000 points approach explanation to continue with the 5K - 5000 points approach.
@@ -113,7 +113,11 @@
                       
                     </br>
                       <img style= "max-width: 60%;display:block;margin:auto;" src="images/susc_map_1K.png" alt="Susceptibility map 1000-points"/>
-
+                      <br>
+                      <h3 align="center">Associated histogram:</h3>
+                      <br>
+                      <p align="center">The following histogram allows us to understand the distribution of this first output.</p>
+                      <img style= "max-width: 60%;display:block;margin:auto;" src="images/chart_1k.png" alt="Susceptibility map 1K chart"/>
                   </section>
 
                   <section>
@@ -197,8 +201,23 @@
 
                       </br>
 
-                        <img style= "max-width: 60%;display:block;margin:auto;" src="images/susc_map_5K.png" alt="Susceptibility map 1000-points"/>
+                        <img style= "max-width: 60%;display:block;margin:auto;" src="images/susc_map_5K.png" alt="Susceptibility map 5000-points"/>
+                        <br>
+                        <h3 align="center">Associated histogram:</h3>
+                        <br>
+                        <p align="center">The following histogram allows us to understand the distribution of this second output.</p>
+                        <img style= "max-width: 60%;display:block;margin:auto;" src="images/chart_5k.png" alt="Susceptibility map 5K chart"/>
 
+                  </section>
+
+                  <section>
+                    <h2 style="text-align:center;">TIN model of 5K points output</h2>
+                    <p align="justify">As an extra output we have performed the Triangulated Irregular Network model of our second output (the one corresponding to the 5K points approach). This model fits with a mesh of triangles the different values of our output and it is a high quality output which may be used for precise analysis:
+                    </p>
+                  </br>
+
+                  <img style= "max-width: 60%;display:block;margin:auto;" src="images/map_tin.png" alt="TIN model output (5K points)"/>
+                  
                   </section>
 
                   <section>
@@ -207,9 +226,13 @@
                     </p>
                   </br>
 
-                  <img style= "max-width: 60%;display:block;margin:auto;" src="images/susc_comparison.png" alt="Susceptibility map 1000-points"/>
+                  <img style= "max-width: 60%;display:block;margin:auto;" src="images/susc_comparison.png" alt="Susceptibility map 1K-5K comparison "/>
+                  
+                  <br>
 
-              
+                  <p align="justify">As it is possible to observe in the above map there are areas in which the variation with respect of the first output was relevant in terms of the disminution of the susceptibility level. This conclusion is possible to be observed in the following histogram:</p>
+                  <img style= "max-width: 60%;display:block;margin:auto;" src="images/chart_comparison.png" alt="Susceptibility map 1K-5K comparison chart"/>
+
                   </section>
 
                 </article>
