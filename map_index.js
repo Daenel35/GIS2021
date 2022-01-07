@@ -1,9 +1,3 @@
-//var map = new ol.Map({
-//  target: document.getElementById("map"),
-//  layers: [new ol.layer.Tile({ visible: true, source: new ol.source.OSM() })],
-//  view: new ol.View({ center: [0, 0], zoom: 2 }),
-//});
-
 //general variables:
 
 //var url_wms = 'http://ec2-3-15-148-89.us-east-2.compute.amazonaws.com:8080/geoserver/wms'
@@ -16,7 +10,7 @@ var workspace_name = 'aaa';
 var osm = new ol.layer.Tile({
   title: "Open Street map",
   type: "base",
-  visible: true,
+  visible: false,
   source: new ol.source.OSM(),
 });
 
@@ -33,7 +27,7 @@ var bingRoads = new ol.layer.Tile({
 var bingAerial = new ol.layer.Tile({
   title: "Bing Maps—Aerial",
   type: "base",
-  visible: false,
+  visible: true,
   source: new ol.source.BingMaps({
     key: "AvUPT-mlamS50HlSYOaL5Mz8iZvqbzGrUs1-qRLevsCd8ZjyoRAPcQf1Ab5E2w1u",
     imagerySet: "Aerial",
@@ -67,7 +61,7 @@ var stamenToner = new ol.layer.Tile({
 //LAYERS:
 
 var susc_1K = new ol.layer.Image({
-  title: "Susceptibility map 1K",
+  title: "Susceptibility map 1K (72% O.A.)",
   source: new ol.source.ImageWMS({
     url: url_wms,
     params: { LAYERS: workspace_name + ':susc_map_1K' },
@@ -76,7 +70,7 @@ var susc_1K = new ol.layer.Image({
 });
 
 var susc_5K = new ol.layer.Image({
-  title: "Susceptibility map 5K",
+  title: "Susceptibility map 5K (80% O.A.)",
   source: new ol.source.ImageWMS({
     url: url_wms,
     params: { LAYERS: workspace_name + ':susc_map_5K' },
@@ -107,7 +101,7 @@ var map = new ol.Map({
 
   view: new ol.View({
     center: ol.proj.fromLonLat([10.173274, 46.214324]),
-    zoom: 11,
+    zoom: 11.6,
   }),
 
   controls: ol.control.defaults().extend([
@@ -125,7 +119,20 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
-// add legends
+// add legends:
 
 document.getElementById("get-legend").innerHTML =
   "<img src=" + susc_5K.A.source.getLegendUrl() + "></img>";
+
+//opacity control:
+
+const opacityInput = document.getElementById('opacity-input');
+const opacityOutput = document.getElementById('opacity-output');
+function update() {
+  const opacity = parseFloat(opacityInput.value);
+  susc_5K.setOpacity(opacity);
+  opacityOutput.innerText = opacity.toFixed(2);
+}
+opacityInput.addEventListener('input', update);
+opacityInput.addEventListener('change', update);
+update();

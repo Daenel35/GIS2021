@@ -25,6 +25,9 @@
 		  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		  crossorigin="anonymous"
 		></script>
+
+    <!-- my libraries -->
+    <script type="text/javascript" src="myfunctions.js"></script>
 	
 		<!--Bootstrap library-->
 	
@@ -34,7 +37,8 @@
 		  type="text/css"
 		/>
 		<script src="./libraries/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
-    <title>Landslide's Susceptibility Mapping and Exposure Assessment</title>
+    <title>Landslide Susceptibility Mapping and Exposure Assessment</title>
+
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -48,7 +52,7 @@
       <header id="header">
         <div class="logo container">
           <div>
-            <p>Geographic Information Systems<br><br></p>
+            <p>AAA - Geographic Information Systems<br><br></p>
             <a href="index.html">
              <img src="images/AAAlogow.png" alt="logo" style="width:200px;height:200px;">
             </a>
@@ -75,10 +79,10 @@
       <!-- Banner -->
       <section id="banner">
         <div class="content">
-          <h2>Landslide's Susceptibility Mapping and Exposure Assessment</h2>
+          <h2>Landslide Susceptibility Mapping and Exposure Assessment</h2>
           <p>
-            Implementation of a model for landslide's susceptibility mapping and
-            exposure assessment for the Tirano region in Lombardy
+            Model Implementation for Landslide Susceptibility Mapping and
+            Exposure Assessment for the Tirano region in Lombardy, Italy
           </p>
           <a href="#map" class="button scrolly">INTERACT WITH THE RESULTS!</a>
         </div>
@@ -112,41 +116,50 @@
                   </p>
                 </header>
                 <p>
-                  The two layers exposed at the following are the result of the implementation of a random forest model with two different approaches (1000 sampling points and 5000 sampling points) in order to determine which are the areas were is more likely that a landslides occurs. The study region was Tirano.
+                  The two layers available in the following interactive map are the result of the implementation of a Random Forest model with two different approaches ( 1K - 1000 sampling points and 5K - 5000 sampling points) in order to determine which are the areas were a landslide is more likely to occur in the study region of the Tirano municipality in Lombardy, northern Italy. For more details on the proccessing necessary to achieve these results, head for the <a href="processing.html">Processing</a> section.
                 </p>
 
                 
               </br>
-              <div id="map">
-                
-                <div id="get-legend" style="float:left;margin-bottom: 10px;"></div>
-
+              <div id="ShowLegend" style="width: 100%; display: none;">
+                <div style="display: table-row">
+                  <h3 style="width: 600px; display: table-cell;">Susceptibility Map<br><br>
+                    <div id="get-legend" ></div></h3>
+                </div>
               </div>
+              <input id="LegendButton" style="display: block;" type="button" value="Show Legend" onclick="showDiv()"/>
+              <br>
+              <div id="map" style="max-height: 510px;"></div>
+              <br>
+              <label>
+                Compare both outputs opacity:
+                <input id="opacity-input" type="range" min="0" max="1" step="0.01" value="1" />
+                <span id="opacity-output"></span>
+              </label>
               <script src="map_index.js"></script>
 
               </section>
             </div>
             
-            <article class="box page-content" style="margin-top:100px">
+            <article class="box page-content" >
 
             <section>
-              <h2 style="text-align:center;margin-top: 10px;"><a href="processing.html">Brief about the processing implemented</a></h2>
+              <h2 style="text-align:center;"><a href="processing.html">About our Project</a></h2>
 
-              
-
-              <p  style="display: block;margin-left: auto;margin-right: auto; margin-top:20px;">
+              <p  style="display: block;margin-left: auto;margin-right: auto; margin-top:20px;" align="justify">
                  
-                In order to predict the landslide's susceptibility zones of the assigned region was necessary to carry out a set of steps to process a certain group of inputs. 
-                
-                Those steps have covered mainly the following aspects:
+                Landslides are one of the most common and harmful natural disaster in the world, accounting for high economic burden due to damages to infrastructure and high number of human fatalities. Different classification has been stablished for understanding the nature of landslides, involving criteria such as the landslide movement type and the type of material involved. Most landslide-prone regions on earth are mountainous, composed by coarse soil and/or lack vegetation which helps anchoring the soil with their roots, or have high moisture content due to slope orientation or proximity to water bodies. All these key elements are environmental factors that can be used to model and estimate landslide susceptibility for a given area. Exposure assessment involves comparing the model data to existing infrastructure and population location, aimed to manage decision making for disaster reduction and hazard risk management. A model for landslide susceptibility mapping and exposure assessment has been implemented for the Tirano region in Lombardy, northern Italy, within the framework of the Geographical Information Systems – GIS 2021/2022 course at Politecnico di Milano, and the results are shared in an interactive web map supported by a webGIS. For more in-depth details on how the model is implemented, click on the know more button.
+                </p>
+                <p style="display: block;margin-left: auto;margin-right: auto; margin-top:20px;" align="justify">
+                In order to predict the landslide susceptibility areas of the assigned region it was necessary to carry out a set of steps to process a group of inputs, including the mentioned environmental factors. Those steps have covered mainly the following aspects:
                 
                 <ul>
-                  <li>implementation of basic fixing operations on the input layers like resampling and reclassification of their data</li>
-                  <li>transformation from vector data model to raster one</li>
-                  <li>extraction of information by implementing a sampling technique over the different input layers</li>
+                  <li>Implementation of basic fixing operations on the input layers like resampling and reclassification of their data</li>
+                  <li>Transformation from vector data model to raster data</li>
+                  <li>Extraction of information by a sampling technique over the different input layers</li>
                 </ul>
                 
-                This preprocessing stage was the foundation for the implementation of the random forest model.
+                This preprocessing stage was the foundation for the implementation of the Random Forest model.
 
               </p>
 
@@ -160,18 +173,18 @@
                     
               </br>
 
-                <h2 style="text-align:center; margin-top: 10px;"><a href="about_us.html">This is our team</a></h2>
+                <h2 style="text-align:center; margin-top: 10px;"><a href="about_us.html">About Our team</a></h2>
   
                 
             
-                <p>The team of AAA-Geographic Information Systems is characterized for a strong passion to work on topics related with public issues of its community. Also is a key value of this group the teamwork and the collaboration to get together high level results.
+                <p align="justify">The team of AAA - Geographic Information Systems is an interdisciplinary group of MSc. Students from different countries and academic backgrounds characterized for a strong passion to work on topics related with public issues of its community. A key value of this group is teamwork and the disposition to collaborate dynamicaly to obtain together high-level results.
                 </p>
                 <img src="images/team.png" style="max-width:400px;max-height:200px;display: block;margin-left: auto;
                 margin-right: auto;" alt="team"
             />
               </br>
               <a href="about_us.html" class="button" style="max-width:300px;display: block;margin-left: auto;
-              margin-right: auto;">Know more</a>        
+              margin-right: auto;">Get to Know us!</a>        
               </section>
               </article>
 
@@ -214,7 +227,7 @@
                 <!-- Copyright -->
                 <div id="copyright">
                   <ul class="menu">
-                    <li>Group 1- Politecnico di Milano - GIS course 2021: Aguirre Nieto, Daniel Alberto - Amieva, Juan Francisco - Austoni, Alessandro</a></li>
+                    <li>Politecnico di Milano - GIS course 2021/2022 - Group 1: Aguirre Nieto, Daniel Alberto - Amieva, Juan Francisco - Austoni, Alessandro</a></li>
                   </ul>
                 </div>
               </div>
