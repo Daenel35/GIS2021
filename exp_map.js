@@ -79,7 +79,7 @@ var population = new ol.layer.Image({
 	title:'Population map',
 	source: new ol.source.ImageWMS({
 	url: url_wms, 
-	params: {'LAYERS': workspace +':pop_reproj_basin'},
+	params: {'LAYERS': workspace +':pop_reproj'},
 	crossOrigin: 'anonymous'
 	}), 
 });
