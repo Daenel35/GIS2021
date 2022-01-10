@@ -376,7 +376,7 @@ h4 {
 }
 
 a {
-  color: #006376;
+  color: #6D7770;
   text-decoration: underline;
 }
 
@@ -2043,7 +2043,7 @@ input[type="submit"]:active,
 input[type="reset"]:active,
 button:active,
 .button:active {
-  background: #a1cd9b;
+  background: #c1edbb;
 }
 
 input[type="button"].alt,
@@ -3082,7 +3082,7 @@ body {
     text-transform: uppercase;
     font-size: 1.25em;
     line-height: 44px;
-    color: #fff;
+    color: #1b291b00;
     z-index: 1000;
     text-align: center;
   }
