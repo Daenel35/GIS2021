@@ -6,28 +6,97 @@
 -->
 <html>
   <head>
-     <!--openlayers library-->
-    <link rel="stylesheet" href="libraries/v6.9.0-dist/ol.css" />
-    <script src="libraries/v6.9.0-dist/ol.js"></script>
-  
-    <!--layer switcher library-->
-    <script src="https://rawgit.com/walkermatt/ol-layerswitcher/master/dist/ol-layerswitcher.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://rawgit.com/walkermatt/ol-layerswitcher/master/src/ol-layerswitcher.css"
-    />
-  
-    <!--jQuery library-->
-  
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+    <!-- MODAL FOR ZOOMING -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    #myImg {
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-    <!-- my libraries -->
-    <script type="text/javascript" src="myfunctions.js"></script>
-  
+    #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {  
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)} 
+      to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+      .modal-content {
+        width: 100%;
+      }
+    }
+    </style>
+
+
     <!--Bootstrap library-->
   
     <link
@@ -115,10 +184,17 @@
                     <div class="col-3 col-6-medium col-12-small">
                       <!-- Feature -->
                       <section class="box feature">
-                        <a href="#" class="image featured"
-                          ><img src="images/DTM.jpg" alt=""
-                        /></a>
-                        <h3><a href="#">DTM</a></h3>
+                        <img id="myImg" src="images/DTM.jpg" alt="DTM" style="width:100%;max-width:300px">
+
+                          <!-- The Modal -->
+                          <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                          </div>
+                          <script src="modal.js">
+                          </script>
+                        <h3>DTM</h3>
                         <p align="justify">
                           The Digital Terrain Model is a raster layer geospatial feature that provides gridded information of the Earth surface height, excluding vegetation and built features. For this case, a DTM of 5mx5m pixel resolution was used, and several layers where computed trough it’s derivatives like Slope, Aspect and Curvature.
                         </p>
@@ -127,10 +203,12 @@
                     <div class="col-3 col-6-medium col-12-small">
                       <!-- Feature -->
                       <section class="box feature">
-                        <a href="#" class="image featured"
-                          ><img src="images/Slope.jpg" alt=""
-                        /></a>
-                        <h3><a href="#">SLOPE</a></h3>
+                        <img id="myImg" src="images/Slope.jpg" alt="Slope" style="width:100%;max-width:300px">
+
+                          
+                          <script src="modal.js">
+                          </script>
+                        <h3>SLOPE</h3>
                         <p align="justify">
                           calculated by comparing a certain point within a raster to that point's surrounding neighbor’s height values, describing its steepness, incline, or grade. A higher slope value indicates a steeper incline.
                         </p>
@@ -200,7 +278,7 @@
                       <!-- Feature -->
                       <section class="box feature">
                         <a href="#" class="image featured"
-                          ><img src="images/pic03.jpg" alt=""
+                          ><img src="images/NDVI.jpg" alt=""
                         /></a>
                         <h3><a href="#">NDVI</a></h3>
                         <p align="justify">
@@ -258,11 +336,11 @@
                       <!-- Feature -->
                       <section class="box feature">
                         <a href="#" class="image featured"
-                          ><img src="images/pic03.jpg" alt=""
+                          ><img src="images/LZ_NLZ.jpg" alt=""
                         /></a>
                         <h3><a href="#">LZ-NLZ</a></h3>
                         <p align="justify">
-                          Landslide Zones - LZ and No Landslide Zones - NLZ, the first which were fixed to be the areas with slopes were less tan 20° or greater than 70°, and the second from the Landslide inventory a Landslide Zone - LZ was defined as all of the areas were at least one landslide event had occurred. The LZ were substracted from the presumed NLZ, obtaining a NLZ-LZ rasterized layer with Hazard Areas on LZ and no Hazard Areas on the NLZ. 
+                          Landslide Zones - LZ and No Landslide Zones - NLZ, the first which were fixed to be the areas with slopes were less tan 20° or greater than 70°, and the second defined from the Landslide inventory as all of the areas were at least one event has occurred. The LZ were substracted from the presumed NLZ, obtaining a NLZ-LZ rasterized layer with Hazard Areas on LZ and no Hazard Areas on the NLZ. 
                         </p>
                       </section>
                     </div>
@@ -286,7 +364,7 @@
           </div>
           <div class="col-12">
               <!-- MAP Feature  -->
-              <section class="box features">
+              <!-- <section class="box features">
                 <h2 class="major"><span>Interactive Map</span></h2>
                 <div id="ShowLegend" style="width: 100%; display: none;">
                   <div style="display: table-row">
@@ -299,7 +377,7 @@
                 <div id="map" style="max-height: 510px;">
                 </div>
                 <script src="map_index.js"></script>
-              </section>
+              </section> -->
         </div>
       </section>
 
