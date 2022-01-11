@@ -6,6 +6,36 @@
 -->
 <html>
   <head>
+     <!--openlayers library-->
+    <link rel="stylesheet" href="libraries/v6.9.0-dist/ol.css" />
+    <script src="libraries/v6.9.0-dist/ol.js"></script>
+  
+    <!--layer switcher library-->
+    <script src="https://rawgit.com/walkermatt/ol-layerswitcher/master/dist/ol-layerswitcher.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://rawgit.com/walkermatt/ol-layerswitcher/master/src/ol-layerswitcher.css"
+    />
+  
+    <!--jQuery library-->
+  
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- my libraries -->
+    <script type="text/javascript" src="myfunctions.js"></script>
+  
+    <!--Bootstrap library-->
+  
+    <link
+      rel="stylesheet"
+      href="./libraries/bootstrap-5.1.3-dist/css/bootstrap.min.css"
+      type="text/css"
+    />
+    <script src="./libraries/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
     <title>Processing</title>
     <meta charset="utf-8" />
     <meta
@@ -56,13 +86,12 @@
                   <header>
                     <h2>THE MODEL INPUT</h2>
                     <p>
-                      STEP 1 - DATA PREPROCESSING FOR SUSCEPTIBILITY MAPPING
+                      DATA PREPROCESSING FOR SUSCEPTIBILITY MAPPING
                     </p>
                   </header>
 
                   <section>
-                    <span class="image featured"
-                      >
+                    <span class="image featured">
                       <div class="cropped">
                         <img src="images/Geospatial-data.jpg" alt=""/>
                       </div>
@@ -70,24 +99,10 @@
                     <p align="justify">
                        Most landslide-prone regions on earth are mountainous, composed by coarse soil and/or lack vegetation which helps anchoring the soil with their roots, or have high moisture content due to slope orientation or proximity to water bodies. All these key elements are environmental factors that can be used to model and estimate landslide susceptibility for a given area. Landslide inventories from competent authorities are also useful for indentifying areas that have already been affected by this natural phenomena. A model for landslide susceptibility mapping and exposure assessment has been implemented for the Tirano region in Lombardy, northern Italy, in a series of steps described in this section.
                     </p>
-                  <!-- </section>
-
-                  <section>
-                    <h3>More intriguing information</h3>
-                    <p>
-                      Lorem ipsum dolor 
+                    <p align="justify">
+                      All of the raster input layers for environmental factors were clipped by mask according to the Tirano area, and resampled when necessary to match the 5 m x 5 m resolution, with the same extent. A coarse simplification was done regarding the No Landslide Zones - NLZ, which were fixed to be the areas with slopes were less tan 20° or greater than 70°, with a 40 pixel sieve, meaning areas with less than 40 pixels were discarded as NLZ. From the Landslide inventory a Landslide Zone - LZ was defined as all of the areas were at least one landslide event had occourred. The LZ were substracted from the presumed NLZ, obtaining a NLZ-LZ rasterized layer with Hazard Areas on LZ and no Hazard Areas on the NLZ. A 70% random selection of polygons was used for the model training, and the other 30% ramained for validation. A random cloud of points was generated in between the NLZ-LZ layer on both training and testing sets, and their correspondant values from all the other raster layers were sampled. The model received as input all the raster layers mentioned above, plus the sampled testing and training points, generating a susceptability map for the given area, wich was then compared to the 30% of sampled points left for validation.
                     </p>
                   </section>
-
-                  <section>
-                    <h3>So in conclusion ...</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, 
-                    </p>
-                    <p>
-                      Suspendisse laoreet metus 
-                    </p>
-                  </section> -->
                 </article>
               </div>
             </div>
@@ -152,13 +167,13 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <!-- Features 1st row -->
+              <!-- Features 2nd row -->
               <section class="box features">
                 <p></p>
                 <div>
                   <div class="row">
                     <div class="col-3 col-6-medium col-12-small">
-                      <!-- Feature -->
+                      <!-- Features -->
                       <section class="box feature">
                         <a href="#" class="image featured"
                           ><img src="images/Profile.jpg" alt=""
@@ -173,7 +188,7 @@
                       <!-- Feature -->
                       <section class="box feature">
                         <a href="#" class="image featured"
-                          ><img src="images/pic02.jpg" alt=""
+                          ><img src="images/DUSAF.jpg" alt=""
                         /></a>
                         <h3><a href="#">Land Use - DUSAF</a></h3>
                         <p align="justify">
@@ -197,11 +212,11 @@
                       <!-- Feature -->
                       <section class="box feature">
                         <a href="#" class="image featured"
-                          ><img src="images/pic04.jpg" alt=""
+                          ><img src="images/Faults.jpg" alt=""
                         /></a>
-                        <h3><a href="#">Distance to Features</a></h3>
+                        <h3><a href="#">Distance to Faults</a></h3>
                         <p align="justify">
-                          A series of buffer distances from the corresponding lines depicting the Roads, Faults and Rivers of the working region. Distances were set to be 50, 100, 200, 500 m and over 500 m (9999 value), creating a raster layer of the different buffers for each line attribute.
+                          A series of buffer distances from the corresponding lines depicting the Geological Faults of the working region. Distances were set to be 50, 100, 200, 500 m and over 500 m (9999 value), creating a raster layer of the different buffers for each line attribute.
                         </p>
                       </section>
                     </div>
@@ -209,50 +224,82 @@
                 </div>
               </section>
             </div>
+            <div class="row">
             <div class="col-12">
-              <div class="content">
-                <!-- Content 2 Output -->
-
-                <article class="box highlight">
-                  <header>
-                    <h2>THE MODEL OUTPUT</h2>
-                    <p>
-                      STEP 2 - SUSCEPTIBILITY MAP
-                    </p>
-                  </header>
-
-                  <section>
-                    <span class="image featured"
-                      >
-                      <div class="cropped">
-                        <img src="images/Geospatial-data2.jpg" alt=""/>
-                      </div>
-                    </span>
-                    <p align="justify">
-                       Most landslide-prone regions 
-                    </p>
-                  </section>
-
-                  <section>
-                    <h3>More intriguing information</h3>
-                    <p>
-                      Lorem ipsum dolor 
-                    </p>
-                  </section>
-
-                  <section>
-                    <h3>So in conclusion ...</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, 
-                    </p>
-                    <p>
-                      Suspendisse laoreet metus 
-                    </p>
-                  </section>
-                </article>
-              </div>
+              <!-- Features 3rd row -->
+              <section class="box features">
+                <p></p>
+                <div>
+                  <div class="row">
+                    <div class="col-3 col-6-medium col-12-small">
+                      <!-- Features -->
+                      <section class="box feature">
+                        <a href="#" class="image featured"
+                          ><img src="images/Roads.jpg" alt=""/></a>
+                        <h3><a href="#">Distance to Roads</a></h3>
+                        <p align="justify">
+                          A series of buffer distances from the corresponding lines depicting the Roads of the working region. Distances were set to be 50, 100, 200, 500 m and over 500 m (9999 value), creating a raster layer of the different buffers for each line attribute.
+                        </p>
+                      </section>
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+                      <!-- Feature -->
+                      <section class="box feature">
+                        <a href="#" class="image featured"
+                          ><img src="images/Rivers.jpg" alt=""
+                        /></a>
+                        <h3><a href="#">Distance to Rivers</a></h3>
+                        <p align="justify">
+                          A series of buffer distances from the corresponding lines depicting the Rivers of the working region. Distances were set to be 50, 100, 200, 500 m and over 500 m (9999 value), creating a raster layer of the different buffers for each line attribute.
+                        </p>
+                      </section>
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+                      <!-- Feature -->
+                      <section class="box feature">
+                        <a href="#" class="image featured"
+                          ><img src="images/pic03.jpg" alt=""
+                        /></a>
+                        <h3><a href="#">LZ-NLZ</a></h3>
+                        <p align="justify">
+                          Landslide Zones - LZ and No Landslide Zones - NLZ, the first which were fixed to be the areas with slopes were less tan 20° or greater than 70°, and the second from the Landslide inventory a Landslide Zone - LZ was defined as all of the areas were at least one landslide event had occurred. The LZ were substracted from the presumed NLZ, obtaining a NLZ-LZ rasterized layer with Hazard Areas on LZ and no Hazard Areas on the NLZ. 
+                        </p>
+                      </section>
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+                      <!-- Feature -->
+                      <section class="box feature">
+                        <!-- <a href="#" class="image featured"
+                          ><img src="images/Faults.jpg" alt=""
+                        /></a>
+                        <h3><a href="#">Distance to Features</a></h3>
+                        <p align="justify">
+                          A series of buffer 
+                        </p> -->
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
+          </div>
+          <div class="col-12">
+              <!-- MAP Feature  -->
+              <section class="box features">
+                <h2 class="major"><span>Interactive Map</span></h2>
+                <div id="ShowLegend" style="width: 100%; display: none;">
+                  <div style="display: table-row">
+                    <h3 style="width: 600px; display: table-cell;">Susceptibility Map<br><br>
+                      <div id="get-legend" ></div></h3>
+                  </div>
+                </div>
+                <input id="LegendButton" style="display: block;" type="button" value="Show Legend" onclick="showDiv()"/>
+                <br>
+                <div id="map" style="max-height: 510px;">
+                </div>
+                <script src="map_index.js"></script>
+              </section>
         </div>
       </section>
 
